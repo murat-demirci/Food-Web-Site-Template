@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navBar{
+            
+            display: flex;
+            position: -webkit-sticky;
+            position: sticky;
+            align-self: start;
+            top: 0;
+            justify-content: space-between;
+            background-color: #fff;
+            box-shadow: 0 1px 5px grey;
+            overflow: hidden;
+        }
+        .hamburger{
+            display: flex;
+            flex: auto;
+            text-align: center;
+            position: relative;
+            z-index: -100;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        .hamburger img{
+            width: 100%;
+        }
+        .imgTxt{
+            position: absolute;
+            padding: 12px 24px;
+            opacity: 0.60;
+            left: 12%;
+            bottom: 0;
+            letter-spacing: 4px;
+            font-family: "Times New Roman", Georgia, Serif;
+            font-size: 15px;
+        }
+        .hamburger .imgTxt h1{
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            font-size: 36px;
+            font-weight: 400;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .navBar ul{
+            list-style: none;
+        }
+        .navBar li{
+            float: left;
+            padding: 8px 16px;
+            
+        }
+        .navBar li a{
+            font-family: "Times New Roman", Georgia, Serif;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+        }
+        .navBar li:hover{
+            background-color: rgb(197, 197, 197);
+            
+        }
+        .navBar .secondUl li{
+            padding: 8px 16px;
+        }
+        
+        .content{
+            display: flex;
+            justify-content: center;
+            padding: 64px 0;
+            
+        }
+        .firstContent{
+            width: 49%;
+            padding: 12px 24px;
+            line-height: 1.5;
+        }
+        .firstImg{
+            width: 39.3%;
+            padding: 12px 24px;
+            text-align: center;
+            float: left;
+        }
+        .firstImg img{
+            width: 100%;
+        }
+        .firstContent h1{
+            text-align: center;
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            font-size: 36px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        .firstContent h5{
+            text-align: center;
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            font-size: 18px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        .firstContent .firstP{
+            font-family: "Times New Roman", Georgia, Serif;
+            font-size: 18px;
+            
+            margin: 18px 0;
+        }
+        .firstContent .secondP{
+            color: #757575;
+            font-size: 18px;
+            font-family: "Times New Roman", Georgia, Serif;
+            margin: 18px 0;
+        }
+        .content2{
+            display: flex;
+            justify-content: center;
+            padding: 64px 0;
+        }
+        .menu{
+            padding: 12px 24px;
+            line-height: 1.5;
+            width: 39.3%;
+        }
+        .img2{
+            padding: 12px 24px;
+            line-height: 1.5;
+            width:33.2%; 
+        }
+        .img2 img{
+            width: 100%;
+        }
+        .menu h1, .menu h4{
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            font-weight: 400;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .menu h1{
+            font-size: 36px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .menu h4{
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .menu p{
+            color: #757575;
+            display: block;
+            font-family: "Times New Roman", Georgia, Serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        hr{
+            display: block;
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+            height:0;
+            overflow: visible;
+            box-sizing: content-box;
+            display: block;
+            
+        }
+        .contact{
+            display: block;
+            margin: 0 auto;
+            padding: 64px 16px;
+            line-height: 1.5;
+            font-size: 15px;
+            width: 70%;
+        }
+        .contact h1{
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            margin: 10px 0;
+            font-weight: 400;
+            font-size: 36px;
+        }
+        .contact .p1{
+            margin: 15px 0;
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+        .contact .p2{
+            margin: 18px 0;
+            color: #607d8b;
+            font-size: 18px;
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+        .contact p input{
+            border: none;
+            border-bottom:1px solid #eee;
+            width: 100%;
+        }
+        form p input{
+            padding: 16px 8px;
+        }
+        form p button{
+            color: black;
+            background-color: #f1f1f1;
+            margin: 16px 0;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            overflow: hidden;
+            vertical-align: middle;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+        }
+        form p button:hover{
+            background-color: darkgrey;
+        }
+        footer{
+            color: black;
+            background-color: #f1f1f1;
+            padding: 32px 0;
+            text-align: center;
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+        @media only screen and (min-width:1280px){
+            .firstContent{
+                width: 33.3%;
+            }
+        }
+        @media only screen and (max-width:770px)
+        {
+            .firstImg{
+                display: none;
+            }
+            .firstContent{
+                width: 100%;
+            }
+            .navBar .secondUl{
+                display: none;
+            }
+        }
+        @media only screen and (max-width:1300px){
+            
+            .content2{
+                flex-direction: column;
+                align-items: center;
+                
+            }
+            .content .firstContent .secondP{
+                
+                display: none;
+            }
+            .menu{
+                width: 100%;
+            }
+            .menu div{
+                width: 100%;
+            }
+            .img2{
+                width: 80%;   
+            }
+            .img2 img{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navBar">
+        <ul>
+            <li><a href="#home">Gourmet au Catering</a></li>
+        </ul>
+        <ul class="secondUl">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="hamburger" id="home">
+        <img src="hamburger.jpg" alt="">
+        <div class="imgTxt">
+            <h1>Le Catering</h1>   
+        </div>
+    </div>
+    <div class="content" id="about">
+        <div class="firstImg">
+            <img src="tablesetting2.jpg" alt="">
+        </div>
+        <div class="firstContent">
+            <h1>About Catering</h1>
+            <br>
+            <h5>Tradition since 1889</h5>
+            <p class="firstP">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use seasonal ingredients.</p>
+            <p class="secondP">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="content2" id="menu">
+    <div class="menu">
+        <h1>Our Menu</h1>
+        <br>
+        <div>
+            <h4>Bread Basket</h4>
+            <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
+        </div>
+        <div>
+            <h4>Honey Almond Granola with Fruits</h4>
+            <p>Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+        </div>
+        <div>
+            <h4>Belgian Waffle</h4>
+            <p>Vanilla flavored batter with malted flour 7.50</p>
+        </div>
+        <div>
+            <h4>Scrambled eggs</h4>
+            <p>Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+        </div>
+        <div>
+            <h4>Blueberry Pancakes</h4>
+            <p>With syrup, butter and lots of berries 8.50</p>
+        </div>
+    </div>
+    <div class="img2">
+        <img src="tablesetting.jpg" alt="">
+    </div>
+    </div>
+    <hr>
+   <div class="contact" id="contact">
+        <h1>Contact</h1>
+        <br>
+        <p class="p1">We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+        <p class="p2">Catering Service, 42nd Living St, 43043 New York, NY</p>
+        <p class="p1">You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+        <form action="">
+            <p>
+                <input type="text" placeholder="Name" required name="Name">
+            </p>
+            <p>
+                <input type="text" placeholder="How many people" required name="People">
+            </p>
+            <p>
+                <input type="datetime-local" placeholder="Date and time" required name="date">
+            </p>
+            <p>
+                <input type="text" placeholder="Message \ Special requirments" required name="Message">
+            </p>
+            
+            <p>
+                <button type="submit">SEND MESSAGE</button>
+            </p>
+        </form>       
+    </div>
+    <footer>
+        <p>Powered by Murat Demirci</p>
+    </footer>
+</body>
+</html>
